@@ -1,0 +1,111 @@
+.contenedor {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #e0e0e0;
+}
+
+.encabezado {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.encabezado h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.encabezado h3 {
+  color: #646cff;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.encabezado .bio {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #aaaaaa;
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+
+.enlaces-contacto {
+  display: flex;
+  justify-content: center;
+  gap: 15px; 
+  margin-top: 30px;
+}
+
+.enlaces-contacto a {
+  background-color: #646cff;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.enlaces-contacto a:hover {
+  background-color: #535bf2;
+  text-decoration: none;
+  transform: translateY(-3px); 
+}
+
+
+.contenedor > div {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+}
+
+.contenedor > div:hover {
+  transform: translateY(-5px);
+  border-color: #646cff;
+}
+
+h2 {
+  color: #646cff; 
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+
+
+ul {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px;
+  list-style: none; 
+  padding: 0;
+}
+
+li {
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px; 
+  font-size: 0.9rem;
+  border: 1px solid #444;
+}
+
+
+a {
+  color: #646cff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  display: none; 
+}

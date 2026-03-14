@@ -1,5 +1,11 @@
 import "./App.css";
 import Sidebar from "./Sidebar";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaFileDownload,
+} from "react-icons/fa";
 
 const tecnologias = [
   {
@@ -44,6 +50,8 @@ const proyectos = [
     descripcion:
       "API REST con autenticación y autorización (JWT + roles). Gestión de usuarios, mascotas, turnos, productos y órdenes. Documentación de API con Swagger.",
     enlace: "https://github.com/osomoya94/Veterinaria-Petshop",
+    imagen:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop",
   },
   {
     nombre: "Ecommerce Backend",
@@ -51,76 +59,138 @@ const proyectos = [
     descripcion:
       "API REST modular para e-commerce. Incluye registro/login, seguridad con JWT y CRUD de productos/categorías.",
     enlace: "https://github.com/osomoya94/ecommerce-backend",
+    imagen:
+      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
 const educacion = [
   {
-    nombre:"Instituto de estudios superiores Santa Maria",
-    titulo:"Tecnico superior en desarrollo de sofware",
+    nombre: "Instituto de estudios superiores Santa Maria",
+    titulo: "Tecnico superior en desarrollo de sofware",
     anio: "2024",
-    descripcion:"luego pienso"
+    descripcion: "luego pienso",
   },
   {
-    nombre:"Henry",
-    titulo:"Desarrollador fullstack",
+    nombre: "Henry",
+    titulo: "Desarrollador fullstack",
     anio: "2025",
-    descripcion:"luego pongo"
+    descripcion: "luego pongo",
   },
   {
-    nombre:"Centro de formacion profesional",
-    titulo:"Programador",
+    nombre: "Centro de formacion profesional",
+    titulo: "Programador",
     anio: "2025",
-    descripcion:"luego pongo"
-  }
+    descripcion: "luego pongo",
+  },
 ];
 
 function App() {
   return (
     <div className="layout-principal">
-
       <Sidebar />
 
       <main className="contenido-principal">
-      {tecnologias.map((bloque) => (
-        <div key={bloque.categoria}>
-          <h2>{bloque.categoria}</h2>
-          <ul>
-            {bloque.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+        <h2> Mis Skills</h2>
+        {tecnologias.map((bloque) => (
+          <div key={bloque.categoria}>
+            <h2>{bloque.categoria}</h2>
+            <ul>
+              {bloque.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
-      <hr />
+        <hr />
 
-      <h2> Mis proyectos</h2>
-      {proyectos.map((estudio) => (
-        <div key={estudio.nombre}>
-          <h3>{estudio.nombre}</h3>
-          <h4>{estudio.rol}</h4>
-          <p>{estudio.descripcion}</p>
-          <p>
-            <a href={estudio.enlace}> Ver repositorio</a>
-          </p>
-        </div>
-      ))}
+        <h2> Mis proyectos</h2>
+        {proyectos.map((estudio) => (
+          <div key={estudio.nombre} className="tarjeta-proyecto">
+            <h3>{estudio.nombre}</h3>
+            <img
+              src={estudio.imagen}
+              alt={estudio.nombre}
+              className="imagen-proyecto"
+            />
+            <h4>{estudio.rol}</h4>
+            <p>{estudio.descripcion}</p>
+            <p>
+              <a href={estudio.enlace} target="_blank" className="boton-cv">
+                Ver repositorio
+              </a>
+            </p>
+          </div>
+        ))}
 
-      <hr />
+        <hr />
 
-      <h2>Educacion</h2>
-      {educacion.map((educacion)=>(
-        <div key={educacion.nombre}>
-          <h3>{educacion.nombre}</h3>
-          <h4>{educacion.titulo}</h4>
-          <h5>{educacion.anio}</h5>
-          <p>{educacion.descripcion}</p>
-        </div>
-      ))}
+        <h2>Educacion</h2>
+        {educacion.map((educacion) => (
+          <div key={educacion.nombre}>
+            <h3>{educacion.nombre}</h3>
+            <h4>{educacion.titulo}</h4>
+            <h5>{educacion.anio}</h5>
+            <p>{educacion.descripcion}</p>
+          </div>
+        ))}
 
+        <hr />
+
+        <section className="seccion-contacto">
+          <div className="contacto-overlay">
+            <h2>Contacto</h2>
+            <h3>Trabajemos juntos</h3>
+            <p>
+              Actualmente estoy abierto a oportunidades laborales, ya sea un
+              puesto a tiempo completo, una colaboración como freelance o
+              simplemente una charla sobre tecnología.
+            </p>
+
+            <div className="contacto-links">
+              <a
+                href="mailto:emanuelmoya11@gmail.com"
+                className="contacto-item"
+              >
+                <span>
+                  Envíame un
+                  <br />
+                  correo electrónico
+                </span>
+                <FaEnvelope className="icono-contacto" />
+              </a>
+
+              <a href="/CV-Emanuel-Moya.pdf" download className="contacto-item">
+                <span>
+                  Descargar
+                  <br />
+                  CV
+                </span>
+                <FaFileDownload className="icono-contacto" />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/emanuel-moya-desarrolladorfullstack/"
+                target="_blank"
+                className="contacto-item"
+              >
+                <span>LinkedIn</span>
+                <FaLinkedin className="icono-contacto" />
+              </a>
+
+              <a
+                href="https://github.com/osomoya94"
+                target="_blank"
+                className="contacto-item"
+              >
+                <span>GitHub</span>
+                <FaGithub className="icono-contacto" />
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
-
     </div>
   );
 }

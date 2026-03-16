@@ -1,6 +1,7 @@
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./App.css";
 import fotoPerfil from "./img/foto-perfil.avif";
+
 function Sidebar() {
   return (
     <header className="encabezado">
@@ -13,20 +14,22 @@ function Sidebar() {
         de la Tecnicatura Superior en Desarrollo de Software. Construyo APIs
         REST seguras y escalables con Node.js, NestJS, TypeScript y PostgreSQL.
       </p>
-      <a href="/CV-Emanuel-Moya.pdf" download className="boton-cv">
+      <a href={`${import.meta.env.BASE_URL}cv/CV-Emanuel-Moya.pdf`} download className="boton-cv">
         Descargar CV
       </a>
       <div className="enlaces-contacto">
-
-        <a href="mailto:emanuelmoya11@gmail.com" title='Email'><FaEnvelope/></a>
+        <a href="mailto:emanuelmoya11@gmail.com" title="Email">
+          <FaEnvelope />
+        </a>
         <a
           href="https://www.linkedin.com/in/emanuel-moya-desarrolladorfullstack/"
           target="_blank"
-          title="LinkedIn">
-          <FaLinkedin/>
+          title="LinkedIn"
+        >
+          <FaLinkedin />
         </a>
         <a href="https://github.com/osomoya94" target="_blank" title="GitHub">
-          <FaGithub/>
+          <FaGithub />
         </a>
       </div>
     </header>

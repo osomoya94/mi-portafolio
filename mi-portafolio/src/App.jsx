@@ -88,13 +88,16 @@ const educacion = [
 function App() {
   return (
     <div className="layout-principal">
-      <Sidebar />
+
+      <div className="columna-sidebar">
+          <Sidebar />
+      </div>
 
       <main className="contenido-principal">
-        <h2> Mis Skills</h2>
+        <h2 className="titulo-seccion"> Mis Skills</h2>
         {tecnologias.map((bloque) => (
           <div key={bloque.categoria}>
-            <h2>{bloque.categoria}</h2>
+            <h3 className="titulo-bloque">{bloque.categoria}</h3>
             <ul>
               {bloque.items.map((item) => (
                 <li key={item}>{item}</li>
@@ -105,7 +108,7 @@ function App() {
 
         <hr />
 
-        <h2> Mis proyectos</h2>
+        <h2 className="titulo-seccion"> Mis proyectos</h2>
         {proyectos.map((estudio) => (
           <div key={estudio.nombre} className="tarjeta-proyecto">
             <h3>{estudio.nombre}</h3>
@@ -126,7 +129,7 @@ function App() {
 
         <hr />
 
-        <h2>Educacion</h2>
+        <h2 className="titulo-seccion" >Educacion</h2>
         {educacion.map((educacion) => (
           <div key={educacion.nombre}>
             <h3>{educacion.nombre}</h3>
@@ -161,7 +164,7 @@ function App() {
                 <FaEnvelope className="icono-contacto" />
               </a>
 
-              <a href="/CV-Emanuel-Moya.pdf" download className="contacto-item">
+              <a href={`${import.meta.env.BASE_URL}cv/CV-Emanuel-Moya.pdf`} download className="contacto-item">
                 <span>
                   Descargar
                   <br />

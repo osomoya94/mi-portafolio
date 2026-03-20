@@ -5,41 +5,73 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaFileDownload,
+  FaCode,
+  FaJava,
+  FaCss3Alt,
 } from "react-icons/fa";
+import {
+  SiNodedotjs,
+  SiNestjs,
+  SiDotnet,
+  SiPython,
+  SiTypescript,
+  SiJavascript,
+  SiPostgresql,
+  SiMysql,
+  SiSqlite,
+  SiMongodb,
+  SiJsonwebtokens,
+  SiSwagger,
+  SiTypeorm,
+  SiGit,
+  SiPostman,
+  SiSocketdotio,
+  SiReact,
+  SiHtml5,
+} from "react-icons/si";
 
 const tecnologias = [
   {
     categoria: "Backend y Lenguajes",
     items: [
-      "Node.js",
-      "NestJS",
-      "C#",
-      ".NET",
-      "Java",
-      "Python",
-      "TypeScript",
-      "JavaScript",
+      { nombre: "Node.js", icono: SiNodedotjs },
+      { nombre: "NestJS", icono: SiNestjs },
+      { nombre: "C#", icono: FaCode },
+      { nombre: ".NET", icono: SiDotnet },
+      { nombre: "Java", icono: FaJava },
+      { nombre: "Python", icono: SiPython },
+      { nombre: "TypeScript", icono: SiTypescript },
+      { nombre: "JavaScript", icono: SiJavascript },
     ],
   },
   {
     categoria: "Bases de Datos",
-    items: ["PostgreSQL", "MySQL", "SQLite", "MongoDB"],
+    items: [
+      { nombre: "PostgreSQL", icono: SiPostgresql },
+      { nombre: "MySQL", icono: SiMysql },
+      { nombre: "SQLite", icono: SiSqlite },
+      { nombre: "MongoDB", icono: SiMongodb },
+    ],
   },
   {
     categoria: "Arquitectura y Herramientas",
     items: [
-      "JWT",
-      "Swagger",
-      "TypeORM",
-      "Git",
-      "GitHub",
-      "Postman",
-      "Socket.IO",
+      { nombre: "JWT", icono: SiJsonwebtokens },
+      { nombre: "Swagger", icono: SiSwagger },
+      { nombre: "TypeORM", icono: SiTypeorm },
+      { nombre: "Git", icono: SiGit },
+      { nombre: "GitHub", icono: FaGithub },
+      { nombre: "Postman", icono: SiPostman },
+      { nombre: "Socket.IO", icono: SiSocketdotio },
     ],
   },
   {
     categoria: "Frontend",
-    items: ["React", "HTML", "CSS"],
+    items: [
+      { nombre: "React", icono: SiReact },
+      { nombre: "HTML", icono: SiHtml5 },
+      { nombre: "CSS", icono: FaCss3Alt },
+    ],
   },
 ];
 
@@ -57,7 +89,7 @@ const proyectos = [
     nombre: "Ecommerce Backend",
     rol: "Backend Developer",
     descripcion:
-      "API REST modular para e-commerce. Incluye registro/login, seguridad con JWT y CRUD de productos/categorías.",
+      "API REST modular para e-commerce. Incluye registro/login, seguridad con JWT y CRUD de productos y categorías.",
     enlace: "https://github.com/osomoya94/ecommerce-backend",
     imagen:
       "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=800&auto=format&fit=crop",
@@ -66,131 +98,171 @@ const proyectos = [
 
 const educacion = [
   {
-    nombre: "Instituto de estudios superiores Santa Maria",
-    titulo: "Tecnico superior en desarrollo de sofware",
+    nombre: "Instituto de Estudios Superiores Santa María",
+    titulo: "Técnico Superior en Desarrollo de Software",
     anio: "2024",
-    descripcion: "luego pienso",
+    descripcion:
+      "Formación terciaria orientada a programación, diseño de software y desarrollo de aplicaciones.",
   },
   {
     nombre: "Henry",
-    titulo: "Desarrollador fullstack",
+    titulo: "Desarrollador Full Stack",
     anio: "2025",
-    descripcion: "luego pongo",
+    descripcion:
+      "Bootcamp intensivo enfocado en desarrollo web full stack, trabajo en equipo y construcción de proyectos.",
   },
   {
-    nombre: "Centro de formacion profesional",
+    nombre: "Centro de Formación Profesional",
     titulo: "Programador",
     anio: "2025",
-    descripcion: "luego pongo",
+    descripcion:
+      "Capacitación práctica en lógica, programación y fundamentos para el desarrollo de software.",
   },
 ];
 
 function App() {
   return (
     <div className="layout-principal">
-
       <div className="columna-sidebar">
-          <Sidebar />
+        <Sidebar />
       </div>
 
       <main className="contenido-principal">
-        <h2 className="titulo-seccion"> Mis Skills</h2>
-        {tecnologias.map((bloque) => (
-          <div key={bloque.categoria}>
-            <h3 className="titulo-bloque">{bloque.categoria}</h3>
-            <ul>
-              {bloque.items.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        <section className="seccion-principal">
+          <h2 className="titulo-seccion">Mis Skills</h2>
 
-        <hr />
+          {tecnologias.map((bloque) => (
+            <article
+              key={bloque.categoria}
+              className="tarjeta-base tarjeta-skill"
+            >
+              <h3 className="titulo-bloque">{bloque.categoria}</h3>
+              <ul className="lista-skills">
+                {bloque.items.map((item) => {
+                  const skill =
+                    typeof item === "string"
+                      ? { nombre: item, icono: FaCode }
+                      : item;
 
-        <h2 className="titulo-seccion"> Mis proyectos</h2>
-        {proyectos.map((estudio) => (
-          <div key={estudio.nombre} className="tarjeta-proyecto">
-            <h3>{estudio.nombre}</h3>
-            <img
-              src={estudio.imagen}
-              alt={estudio.nombre}
-              className="imagen-proyecto"
-            />
-            <h4>{estudio.rol}</h4>
-            <p>{estudio.descripcion}</p>
-            <p>
-              <a href={estudio.enlace} target="_blank" className="boton-cv">
-                Ver repositorio
-              </a>
-            </p>
-          </div>
-        ))}
+                  const Icono = skill.icono;
 
-        <hr />
+                  return (
+                    <li key={skill.nombre} className="skill-item">
+                      <span className="skill-icono">
+                        <Icono />
+                      </span>
+                      <span className="skill-nombre">{skill.nombre}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </article>
+          ))}
+        </section>
 
-        <h2 className="titulo-seccion" >Educacion</h2>
-        {educacion.map((educacion) => (
-          <div key={educacion.nombre}>
-            <h3>{educacion.nombre}</h3>
-            <h4>{educacion.titulo}</h4>
-            <h5>{educacion.anio}</h5>
-            <p>{educacion.descripcion}</p>
-          </div>
-        ))}
+        <section className="seccion-principal">
+          <h2 className="titulo-seccion">Mis proyectos</h2>
 
-        <hr />
+          {proyectos.map((estudio) => (
+            <article
+              key={estudio.nombre}
+              className="tarjeta-base tarjeta-proyecto"
+            >
+              <h3 className="titulo-proyecto">{estudio.nombre}</h3>
+              <p className="meta-proyecto">{estudio.rol}</p>
+              <div className="media-proyecto">
+                <img
+                  src={estudio.imagen}
+                  alt={estudio.nombre}
+                  className="imagen-proyecto"
+                  loading="lazy"
+                />
+              </div>
+              <p className="descripcion-proyecto">{estudio.descripcion}</p>
+              <div className="acciones-proyecto">
+                <a
+                  href={estudio.enlace}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="boton-cv"
+                >
+                  Ver repositorio
+                </a>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        <section className="seccion-principal">
+          <h2 className="titulo-seccion">Educación</h2>
+
+          {educacion.map((item) => (
+            <article
+              key={item.nombre}
+              className="tarjeta-base tarjeta-educacion"
+            >
+              <div className="cabecera-educacion">
+                <p className="anio-educacion">{item.anio}</p>
+                <h3 className="titulo-educacion">{item.titulo}</h3>
+                <p className="institucion-educacion">{item.nombre}</p>
+              </div>
+
+              <p className="descripcion-educacion">{item.descripcion}</p>
+            </article>
+          ))}
+        </section>
 
         <section className="seccion-contacto">
-          <div className="contacto-overlay">
-            <h2>Contacto</h2>
-            <h3>Trabajemos juntos</h3>
-            <p>
-              Actualmente estoy abierto a oportunidades laborales, ya sea un
-              puesto a tiempo completo, una colaboración como freelance o
-              simplemente una charla sobre tecnología.
-            </p>
+          <h2>Contacto</h2>
+          <h3>Trabajemos juntos</h3>
+          <p>
+            Actualmente estoy abierto a oportunidades laborales, ya sea un
+            puesto a tiempo completo, una colaboración como freelance o
+            simplemente una charla sobre tecnología.
+          </p>
 
-            <div className="contacto-links">
-              <a
-                href="mailto:emanuelmoya11@gmail.com"
-                className="contacto-item"
-              >
-                <span>
-                  Envíame un
-                  <br />
-                  correo electrónico
-                </span>
-                <FaEnvelope className="icono-contacto" />
-              </a>
+          <div className="contacto-links">
+            <a href="mailto:emanuelmoya11@gmail.com" className="contacto-item">
+              <span>
+                Envíame un
+                <br />
+                correo electrónico
+              </span>
+              <FaEnvelope className="icono-contacto" />
+            </a>
 
-              <a href={`${import.meta.env.BASE_URL}cv/CV-Emanuel-Moya.pdf`} download className="contacto-item">
-                <span>
-                  Descargar
-                  <br />
-                  CV
-                </span>
-                <FaFileDownload className="icono-contacto" />
-              </a>
+            <a
+              href={`${import.meta.env.BASE_URL}cv/CV-Emanuel-Moya.pdf`}
+              download
+              className="contacto-item"
+            >
+              <span>
+                Descargar
+                <br />
+                CV
+              </span>
+              <FaFileDownload className="icono-contacto" />
+            </a>
 
-              <a
-                href="https://www.linkedin.com/in/emanuel-moya-desarrolladorfullstack/"
-                target="_blank"
-                className="contacto-item"
-              >
-                <span>LinkedIn</span>
-                <FaLinkedin className="icono-contacto" />
-              </a>
+            <a
+              href="https://www.linkedin.com/in/emanuel-moya-desarrolladorfullstack/"
+              target="_blank"
+              rel="noreferrer"
+              className="contacto-item"
+            >
+              <span>LinkedIn</span>
+              <FaLinkedin className="icono-contacto" />
+            </a>
 
-              <a
-                href="https://github.com/osomoya94"
-                target="_blank"
-                className="contacto-item"
-              >
-                <span>GitHub</span>
-                <FaGithub className="icono-contacto" />
-              </a>
-            </div>
+            <a
+              href="https://github.com/osomoya94"
+              target="_blank"
+              rel="noreferrer"
+              className="contacto-item"
+            >
+              <span>GitHub</span>
+              <FaGithub className="icono-contacto" />
+            </a>
           </div>
         </section>
       </main>

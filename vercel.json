@@ -1,0 +1,6 @@
+{
+  "framework": "vite",
+  "installCommand": "npm --prefix mi-portafolio install",
+  "buildCommand": "npm --prefix mi-portafolio run build",
+  "outputDirectory": "mi-portafolio/dist"
+}

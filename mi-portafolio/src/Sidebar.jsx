@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./App.css";
-import fotoPerfil from "./img/foto-perfil.avif";
+import fotoPerfil from "./img/foto-perfil.png";
 
 function Sidebar() {
   return (
@@ -12,14 +12,23 @@ function Sidebar() {
 
       <div className="info-sidebar">
         <h3 className="rol-sidebar">
-          Backend Developer | Full Stack Web Developer
+          Backend Developer | Full Stack Developer
         </h3>
         <p className="ubicacion-sidebar">Catamarca, Argentina</p>
         <p className="bio">
-          Desarrollador Full Stack enfocado en Backend y estudiante del último
-          año de la Tecnicatura Superior en Desarrollo de Software. Construyo
-          APIs REST seguras y escalables con Node.js, NestJS, TypeScript y
-          PostgreSQL.
+          Desarrollador Full Stack con enfoque en Backend, especializado en la
+          construcción de APIs REST escalables.
+          <br />
+          Experiencia trabajando con Node.js, NestJS, TypeScript, PostgreSQL y
+          también con tecnologías como C# y .NET.
+          <br />
+          He desarrollado aplicaciones completas tanto de forma individual como
+          en equipo, aplicando buenas prácticas, arquitectura modular y control
+          de versiones con Git/GitHub.
+          <br />
+          Actualmente utilizo herramientas de inteligencia artificial para
+          optimizar el desarrollo, mejorar la productividad y acelerar el
+          aprendizaje continuo.
         </p>
       </div>
 

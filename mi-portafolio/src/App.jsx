@@ -462,7 +462,7 @@ function App() {
             </a>
 
             <a
-              href={`${import.meta.env.BASE_URL}cv/CV-Emanuel-Moya.pdf`}
+              href={`${import.meta.env.BASE_URL}cv/CV_Emanuel_Moya_Actual.pdf`}
               download
               className="contacto-item"
             >

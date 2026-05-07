@@ -32,7 +32,29 @@ import {
   SiGooglegemini,
   SiOllama,
   SiNotebooklm,
+  SiDocker,
+  SiInsomnia,
 } from "react-icons/si";
+
+// Icono Dapper:
+function DapperIcon() {
+  return (
+    <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+      <text
+        x="50%"
+        y="52%"
+        textAnchor="middle"
+        dominantBaseline="middle"
+        fontSize="16"
+        fontWeight="700"
+        fill="currentColor"
+        fontFamily="Arial, Helvetica, sans-serif"
+      >
+        Dapper
+      </text>
+    </svg>
+  );
+}
 
 const crearRutaProyecto = (carpeta, archivo) =>
   `${import.meta.env.BASE_URL}proyectos/${carpeta}/${archivo}`;
@@ -95,6 +117,9 @@ const tecnologias = [
       { nombre: "Git", icono: SiGit },
       { nombre: "GitHub", icono: FaGithub },
       { nombre: "Postman", icono: SiPostman },
+      { nombre: "Docker", icono: SiDocker },
+      { nombre: "Dapper", icono: DapperIcon },
+      { nombre: "Insomnia", icono: SiInsomnia },
     ],
   },
   {
@@ -112,6 +137,24 @@ const tecnologias = [
 ];
 
 const proyectos = [
+  {
+    nombre: "Proyecto LoteríaVirtual",
+    rol: "Tech Lead | Backend Developer",
+    descripcion:
+      "Lideré el diseño y la arquitectura de una plataforma escalable utilizando .NET (C#). Mi enfoque principal fue garantizar la eficiencia y la facilidad de colaboración del equipo mediante: Optimización de Consultas: Implementé Dapper para una persistencia de datos de alto rendimiento en MySQL, aplicando el patrón Repositorio. Contenerización: Configuré el entorno con Docker y Docker Compose, permitiendo que cualquier desarrollador levante la API y la base de datos de forma inmediata y consistente. Seguridad y Estándares: Diseñé un sistema de autenticación robusto con JWT y BCrypt, además de documentar la API íntegramente con Swagger.",
+    enlace: "https://github.com/osomoya94/LoteriaVirtual",
+    carpetaImagenes: "loteriaVirtual",
+    imagenes: [
+      crearRutaProyecto(
+        "loteriaVirtual",
+        "Captura de pantalla 2026-05-06 142818.png",
+      ),
+      crearRutaProyecto(
+        "loteriaVirtual",
+        "Captura de pantalla 2026-05-06 142830.png",
+      ),
+    ],
+  },
   {
     nombre: "Veterinaria & Petshop",
     rol: "Backend Developer",

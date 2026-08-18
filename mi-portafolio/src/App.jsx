@@ -155,7 +155,32 @@ const proyectos = [
       "Plataforma web desarrollada a medida para digitalizar recepciones, almacenamiento, trazabilidad y expediciones de pallets. Incluye gestión de stock y movimientos, usuarios y roles, autenticación JWT, auditoría, reportes, impresión de documentación y administración de clientes, proveedores, destinos, transportes, vehículos y choferes. El repositorio es privado por tratarse de un desarrollo comercial.",
     enlace: null,
     carpetaImagenes: "emilio-logistica",
-    imagenes: [],
+    imagenes: [
+      crearRutaProyecto(
+        "sistemaDeGestion",
+        "1786434112693.jpg"
+      ),
+      crearRutaProyecto(
+        "sistemaDeGestion",
+        "1786434112763.jpg"
+      ),
+      crearRutaProyecto(
+        "sistemaDeGestion",
+        "1786434113043.jpg"
+      ),
+      crearRutaProyecto(
+        "sistemaDeGestion",
+        "1786434114253.jpg"
+      ),
+      crearRutaProyecto(
+        "sistemaDeGestion",
+        "1786434114113.jpg"
+      ),
+      crearRutaProyecto(
+        "sistemaDeGestion",
+        "1786434112650.jpg"
+      ),
+    ],
   },
   {
     nombre: "LoteríaVirtual",
@@ -167,12 +192,24 @@ const proyectos = [
     imagenes: [
       crearRutaProyecto(
         "loteriaVirtual",
+        "Captura de pantalla 2026-08-17 234854.png",
+      ),
+      crearRutaProyecto(
+        "loteriaVirtual",
+        "Captura de pantalla 2026-08-17 234907.png",
+      ),
+      crearRutaProyecto(
+        "loteriaVirtual",
+        "Captura de pantalla 2026-08-17 234916.png",
+      ),
+      crearRutaProyecto(
+        "loteriaVirtual",
         "Captura de pantalla 2026-05-06 142818.png",
       ),
       crearRutaProyecto(
         "loteriaVirtual",
         "Captura de pantalla 2026-05-06 142830.png",
-      ),
+      )
     ],
   },
   {
@@ -245,7 +282,7 @@ const educacion = [
     titulo: "Programación y Desarrollo Web",
     anio: "2024",
     descripcion:
-      "Formación inicial en programación, lógica, algoritmos y fundamentos del desarrollo web con HTML, CSS, JavaScript y Java. Reconocimiento como alumno destacado por desempeño académico.",
+      "Formación inicial en programación, lógica, algoritmos y fundamentos del desarrollo web con HTML, CSS y JavaScript. Reconocimiento como alumno destacado por desempeño académico.",
   },
 ];
 

@@ -12,23 +12,24 @@ function Sidebar() {
 
       <div className="info-sidebar">
         <h3 className="rol-sidebar">
-          Backend Developer | Full Stack Developer
+          Full Stack Developer | Backend con Node.js, NestJS y TypeScript
         </h3>
         <p className="ubicacion-sidebar">Catamarca, Argentina</p>
         <p className="bio">
-          Desarrollador Full Stack con enfoque en Backend, especializado en la
-          construcción de APIs REST escalables.
+          Desarrollador Full Stack con orientación al Backend y experiencia
+          profesional freelance desarrollando software a medida para un cliente
+          real.
           <br />
-          Experiencia trabajando con Node.js, NestJS, TypeScript, PostgreSQL y
-          también con tecnologías como C# y .NET.
+          Trabajo principalmente con Node.js, NestJS, TypeScript, PostgreSQL,
+          Prisma y React, participando desde el relevamiento de requerimientos
+          hasta el desarrollo, pruebas, despliegue y mantenimiento.
           <br />
-          He desarrollado aplicaciones completas tanto de forma individual como
-          en equipo, aplicando buenas prácticas, arquitectura modular y control
-          de versiones con Git/GitHub.
+          También tengo experiencia con C#/.NET y continúo desarrollando
+          LoteríaVirtual como proyecto personal en evolución.
           <br />
-          Actualmente utilizo herramientas de inteligencia artificial para
-          optimizar el desarrollo, mejorar la productividad y acelerar el
-          aprendizaje continuo.
+          Utilizo herramientas de IA como copiloto técnico para analizar,
+          depurar y revisar alternativas, validando cada implementación antes de
+          incorporarla.
         </p>
       </div>
 
